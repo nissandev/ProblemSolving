@@ -56,3 +56,22 @@ const addBorder = (pictures) => {
 };
 
 // console.log(addBorder(pictures))
+
+
+
+//  4 write a function that will return true or false if sequenctially true otherwise false
+
+const checkSequencial = (arr) => {
+    let result = true;
+  
+    for (let i = 0; i < arr.length - 1; i++) {
+      if (arr[i] >= arr[i + 1]) {
+        result = false;
+        break;
+      }
+    }
+  
+    return result;
+  };
+  
+  // console.log(checkSequencial([1,2,3,4,5,6,7,8,10,4])) 
