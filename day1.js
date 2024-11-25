@@ -34,9 +34,6 @@ const sumAllNumbers = (...numbers) => {
 
 //   console.log(sumAllNumbers(1, 2, 1, 6));
 
-
-
-
 // 3 write a function that will add  picture's border
 
 const pictures = ["abc", "def", "hlel"];
@@ -57,21 +54,41 @@ const addBorder = (pictures) => {
 
 // console.log(addBorder(pictures))
 
-
-
 //  4 write a function that will return true or false if sequenctially true otherwise false
 
 const checkSequencial = (arr) => {
-    let result = true;
-  
-    for (let i = 0; i < arr.length - 1; i++) {
-      if (arr[i] >= arr[i + 1]) {
-        result = false;
+  let result = true;
+
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] >= arr[i + 1]) {
+      result = false;
+      break;
+    }
+  }
+
+  return result;
+};
+
+// console.log(checkSequencial([1,2,3,4,5,6,7,8,10,4]))
+
+//   write a function that will sum the all prime numbers and including the provided number
+
+const sumPrimeNumbers = (num) => {
+  let sum = 0;
+  for (let i = 2; i <= num; i++) {
+    let isPrime = true;
+    for (let j = 2; j < i; j++) {
+        // If i is divisible by any number between 2 and i-1, it's not a prime number. Otherwise, it's a prime number.
+      if (i % j === 0) {
+        isPrime = false;
         break;
       }
     }
-  
-    return result;
-  };
-  
-  // console.log(checkSequencial([1,2,3,4,5,6,7,8,10,4])) 
+    if (isPrime) {
+      sum += i;
+    }
+  }
+  return sum;
+};
+
+console.log(sumPrimeNumbers(10));
